@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const Review = require("../models/reviewModel");
+const Review = require("../models/ReviewModel");
 const { protect } = require("../middleware/authMiddleware");
 const { authorizeRoles } = require("../middleware/roleMiddleware");
 
