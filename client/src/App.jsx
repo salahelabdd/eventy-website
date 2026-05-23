@@ -15,7 +15,7 @@ import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import HotelBookingPage from "./pages/HotelBookingPage";
 import AdminHotelReservations from "./pages/admin/AdminHotelReservation";
-import ProviderDashboard from "./pages/provider/ProviderDashboard";
+import ProviderDashboard from "./pages/provider/providerDashboard";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { applyTheme } from "./utils/themeUtils";
