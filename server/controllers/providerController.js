@@ -1,7 +1,7 @@
 const ProviderRequest = require("../models/ProviderRequest");
-const Venue = require("../models/Venue");
-const Hotel = require("../models/Hotel");
-const Service = require("../models/Service");
+const Venue = require("../models/venue");
+const Hotel = require("../models/hotel");
+const Service = require("../models/service");
 
 // ─── SUBMIT REQUESTS ───────────────────────────────────────────────────────
 

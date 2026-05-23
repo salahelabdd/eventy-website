@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { generateOtp, saveOtp, verifyOtp } = require("../utils/otp");
@@ -31,11 +31,9 @@ const sendOtp = async (req, res) => {
     res.json({ message: "Verification code sent." });
   } catch (err) {
     console.error("Send OTP error:", err);
-    res
-      .status(500)
-      .json({
-        message: "Failed to send verification email. Please try again.",
-      });
+    res.status(500).json({
+      message: "Failed to send verification email. Please try again.",
+    });
   }
 };
 
@@ -67,11 +65,9 @@ const verifyAndRegister = async (req, res) => {
         .json({ message: "Password must be at least 8 characters long." });
     }
     if (!/[A-Z]/.test(password)) {
-      return res
-        .status(400)
-        .json({
-          message: "Password must contain at least one uppercase letter.",
-        });
+      return res.status(400).json({
+        message: "Password must contain at least one uppercase letter.",
+      });
     }
 
     // Double-check email not taken (race condition guard)
@@ -215,11 +211,9 @@ const updateProfile = async (req, res) => {
           .json({ message: "Password must be at least 8 characters long" });
       }
       if (!/[A-Z]/.test(req.body.password)) {
-        return res
-          .status(400)
-          .json({
-            message: "Password must contain at least one uppercase letter",
-          });
+        return res.status(400).json({
+          message: "Password must contain at least one uppercase letter",
+        });
       }
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(req.body.password, salt);

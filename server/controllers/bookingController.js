@@ -1,6 +1,6 @@
 const Booking = require("../models/Booking");
-const Venue = require("../models/Venue");
-const Service = require("../models/Service");
+const Venue = require("../models/venue");
+const Service = require("../models/service");
 const { sendInvitationEmail } = require("../utils/emailService");
 const { calculateTotal } = require("../utils/pricingUtils");
 

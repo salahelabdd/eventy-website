@@ -1,7 +1,7 @@
 const ProviderRequest = require("../models/ProviderRequest");
 const Venue = require("../models/venue");
 const Hotel = require("../models/hotel");
-const Service = require("../models/Service");
+const Service = require("../models/service");
 
 // GET ALL PROVIDER REQUESTS (ADMIN)
 const getAllProviderRequests = async (req, res) => {

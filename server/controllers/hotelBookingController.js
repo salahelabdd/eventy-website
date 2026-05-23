@@ -1,5 +1,5 @@
 const HotelBooking = require("../models/HotelBooking");
-const Hotel = require("../models/Hotel");
+const Hotel = require("../models/hotel");
 const path = require("path");
 const fs = require("fs");
 

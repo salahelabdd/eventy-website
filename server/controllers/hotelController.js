@@ -1,4 +1,4 @@
-const Hotel = require("../models/Hotel");
+const Hotel = require("../models/hotel");
 
 // ─── GET ALL HOTELS ───────────────────────────────────────────────────────────
 const getAllHotels = async (req, res) => {
@@ -9,13 +9,13 @@ const getAllHotels = async (req, res) => {
 
     if (type && type !== "all") filter.type = type;
 
-    if (available === "true")  filter.isAvailable = true;
+    if (available === "true") filter.isAvailable = true;
     if (available === "false") filter.isAvailable = false;
 
     if (search) {
       filter.$or = [
-        { name:        { $regex: search, $options: "i" } },
-        { location:    { $regex: search, $options: "i" } },
+        { name: { $regex: search, $options: "i" } },
+        { location: { $regex: search, $options: "i" } },
         { description: { $regex: search, $options: "i" } },
       ];
     }
@@ -42,9 +42,15 @@ const getHotelById = async (req, res) => {
 const createHotel = async (req, res) => {
   try {
     const {
-      name, location, type, stars,
-      pricePerNight, description,
-      amenities, images, isAvailable,
+      name,
+      location,
+      type,
+      stars,
+      pricePerNight,
+      description,
+      amenities,
+      images,
+      isAvailable,
     } = req.body;
 
     // Basic validation
@@ -58,12 +64,12 @@ const createHotel = async (req, res) => {
       name,
       location,
       type,
-      stars:         Number(stars) || 3,
+      stars: Number(stars) || 3,
       pricePerNight: Number(pricePerNight),
-      description:   description || "",
-      amenities:     Array.isArray(amenities) ? amenities : [],
-      images:        Array.isArray(images)    ? images    : [],
-      isAvailable:   isAvailable !== undefined ? Boolean(isAvailable) : true,
+      description: description || "",
+      amenities: Array.isArray(amenities) ? amenities : [],
+      images: Array.isArray(images) ? images : [],
+      isAvailable: isAvailable !== undefined ? Boolean(isAvailable) : true,
     });
 
     res.status(201).json(hotel);
@@ -79,9 +85,15 @@ const updateHotel = async (req, res) => {
     if (!hotel) return res.status(404).json({ message: "Hotel not found" });
 
     const allowedFields = [
-      "name", "location", "type", "stars",
-      "pricePerNight", "description",
-      "amenities", "images", "isAvailable",
+      "name",
+      "location",
+      "type",
+      "stars",
+      "pricePerNight",
+      "description",
+      "amenities",
+      "images",
+      "isAvailable",
     ];
 
     allowedFields.forEach((field) => {

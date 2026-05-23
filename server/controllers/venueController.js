@@ -1,4 +1,4 @@
-const Venue = require("../models/Venue");
+const Venue = require("../models/venue");
 
 // CREATE VENUE (Admin approves a ProviderRequest and calls this)
 const createVenue = async (req, res) => {
@@ -60,7 +60,10 @@ const updateVenue = async (req, res) => {
     });
 
     // Keep legacy eventType in sync with pricing map when admin updates it
-    if (update.eventTypePricing && typeof update.eventTypePricing === "object") {
+    if (
+      update.eventTypePricing &&
+      typeof update.eventTypePricing === "object"
+    ) {
       const keys =
         update.eventTypePricing instanceof Map
           ? [...update.eventTypePricing.keys()]

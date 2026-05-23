@@ -1,4 +1,4 @@
-const Service = require("../models/Service");
+const Service = require("../models/service");
 
 // @desc Get all services
 const getServices = async (req, res) => {
