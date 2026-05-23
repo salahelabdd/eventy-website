@@ -1,0 +1,791 @@
+/* ══════════════════════════════════════════════
+   PURE LUXURY MONOCHROME LIGHT MODE
+   Cartier / Apple / Saint Laurent Inspired
+══════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────── */
+
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+body > .skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+/* ─────────────────────────────────────────────
+   ROOT COLORS
+───────────────────────────────────────────── */
+
+html.light-mode {
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --bg-muted: #f5f5f5;
+
+  --text: #0a0a0a;
+  --text-soft: #666666;
+  --text-muted: #999999;
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+
+  --hover: rgba(0, 0, 0, 0.04);
+
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
+
+  /* Luxury gold accent */
+  --gold: #c9a227;
+  --gold-soft: rgba(201, 162, 39, 0.12);
+  --gold-border: rgba(201, 162, 39, 0.28);
+}
+
+/* ─────────────────────────────────────────────
+   BODY
+───────────────────────────────────────────── */
+
+html.light-mode body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ─────────────────────────────────────────────
+   PAGE ROOTS
+───────────────────────────────────────────── */
+
+html.light-mode .hm-root,
+html.light-mode .ab-root,
+html.light-mode .sv-root,
+html.light-mode .pp-root,
+html.light-mode .ts-root,
+html.light-mode .dash-root,
+html.light-mode .adm-root,
+html.light-mode .hr-root,
+html.light-mode .bk-root,
+html.light-mode .hbk-root,
+html.light-mode .vd-root,
+html.light-mode .mr-root,
+html.light-mode .ep-root,
+html.light-mode .fp-root,
+html.light-mode .lx-root,
+html.light-mode .rx-root {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* remove dark overlays */
+
+html.light-mode .hm-root::before,
+html.light-mode .ab-root::before,
+html.light-mode .sv-root::before,
+html.light-mode .dash-root::before,
+html.light-mode .adm-root::before,
+html.light-mode .hr-root::before,
+html.light-mode .bk-root::before,
+html.light-mode .hbk-root::before,
+html.light-mode .vd-root::before,
+html.light-mode .mr-root::before {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────
+   TOPBARS
+───────────────────────────────────────────── */
+
+html.light-mode .hm-topbar,
+html.light-mode .dash-topbar,
+html.light-mode .adm-topbar,
+html.light-mode .hr-topbar,
+html.light-mode .bk-topbar,
+html.light-mode .hbk-topbar,
+html.light-mode .vd-topbar,
+html.light-mode .mr-topbar,
+html.light-mode .ep-topbar,
+html.light-mode .pp-topbar,
+html.light-mode .ts-topbar {
+  background: rgba(255, 255, 255, 0.96) !important;
+
+  border-bottom: 1px solid var(--border) !important;
+
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) !important;
+
+  backdrop-filter: blur(18px);
+}
+
+/* remove luxury accent lines */
+
+html.light-mode .hm-topbar::after,
+html.light-mode .hbk-topbar::after,
+html.light-mode .hr-topbar::after {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────
+   NAV LINKS
+───────────────────────────────────────────── */
+
+html.light-mode .hm-nav-link,
+html.light-mode [class*="-nav-link"] {
+  color: var(--text) !important;
+
+  transition: 0.25s ease;
+}
+
+html.light-mode .hm-nav-link:hover,
+html.light-mode [class*="-nav-link"]:hover {
+  color: #000000 !important;
+  opacity: 0.65;
+}
+
+/* ─────────────────────────────────────────────
+   CARDS & PANELS
+───────────────────────────────────────────── */
+
+html.light-mode .dash-stat,
+html.light-mode .dash-nav-card,
+html.light-mode .dash-submit-card,
+html.light-mode .dash-listing-card,
+html.light-mode .dash-recent-wrap,
+html.light-mode .adm-card,
+html.light-mode .adm-table-wrap,
+html.light-mode .bk-panel,
+html.light-mode .bk-summary-box,
+html.light-mode .bk-total-box,
+html.light-mode .vd-panel,
+html.light-mode .vd-stats,
+html.light-mode .vd-services-summary,
+html.light-mode .vd-booking-fields,
+html.light-mode .vd-admin-svc-card,
+html.light-mode .vd-new-svc-form,
+html.light-mode .mr-card,
+html.light-mode .mr-reservation-card,
+html.light-mode .mr-hotel-card,
+html.light-mode .ep-card,
+html.light-mode .ep-panel,
+html.light-mode .hr-card,
+html.light-mode .hr-table-wrap,
+html.light-mode .hr-stat,
+html.light-mode .hbk-panel,
+html.light-mode .hbk-hotel-banner,
+html.light-mode .hbk-summary-box,
+html.light-mode .hbk-total-box,
+html.light-mode .prov-tier-card,
+html.light-mode .dash-confirm-box,
+html.light-mode .sv-card,
+html.light-mode .sv-panel,
+html.light-mode .ab-value-card,
+html.light-mode .ab-team-card,
+html.light-mode .hm-card {
+  background: #ffffff !important;
+
+  border: 1px solid var(--border) !important;
+
+  color: var(--text) !important;
+
+  box-shadow: var(--shadow) !important;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+html.light-mode .hm-card:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--border-strong) !important;
+
+  box-shadow: var(--shadow-hover) !important;
+}
+
+/* remove decorative accents */
+
+html.light-mode .hbk-panel::before,
+html.light-mode .hbk-hotel-banner::before,
+html.light-mode .hbk-summary-box::before,
+html.light-mode .hr-table-wrap::before,
+html.light-mode .hr-stat::before {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────
+   MODALS
+───────────────────────────────────────────── */
+
+html.light-mode .hm-modal,
+html.light-mode .hr-modal,
+html.light-mode .bk-success-box,
+html.light-mode .vd-confirm-box,
+html.light-mode .dash-confirm-box,
+html.light-mode .hbk-success-box {
+  background: #ffffff !important;
+
+  border: 1px solid var(--border) !important;
+
+  color: var(--text) !important;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light-mode .hm-modal-overlay,
+html.light-mode .hr-modal-overlay,
+html.light-mode .prov-overlay,
+html.light-mode .bk-success-overlay,
+html.light-mode .vd-confirm-overlay,
+html.light-mode .dash-confirm-overlay {
+  background: rgba(0, 0, 0, 0.45) !important;
+
+  backdrop-filter: blur(6px);
+}
+
+/* ─────────────────────────────────────────────
+   INPUTS
+───────────────────────────────────────────── */
+
+html.light-mode
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html.light-mode select,
+html.light-mode textarea {
+  background: #ffffff !important;
+
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+
+  color: var(--text) !important;
+
+  box-shadow: none !important;
+
+  transition: 0.2s ease;
+}
+
+html.light-mode input:focus,
+html.light-mode select:focus,
+html.light-mode textarea:focus {
+  border-color: #000000 !important;
+
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05) !important;
+
+  outline: none !important;
+}
+
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+html.light-mode select option {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* ─────────────────────────────────────────────
+   TABLES
+───────────────────────────────────────────── */
+
+html.light-mode table {
+  color: var(--text) !important;
+}
+
+html.light-mode th {
+  background: #fafafa !important;
+
+  color: #000000 !important;
+
+  border-color: var(--border) !important;
+
+  font-weight: 500 !important;
+}
+
+html.light-mode td {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+
+  color: var(--text) !important;
+}
+
+html.light-mode tr:hover td {
+  background: rgba(0, 0, 0, 0.025) !important;
+}
+
+html.light-mode tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.015) !important;
+}
+
+/* ─────────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────────── */
+
+html.light-mode .hr-btn.primary,
+html.light-mode .hbk-submit {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+
+  border: 1px solid #000000 !important;
+
+  transition: 0.25s ease;
+}
+
+html.light-mode .hr-btn.primary:hover,
+html.light-mode .hbk-submit:hover {
+  background: #111111 !important;
+
+  transform: translateY(-1px);
+}
+
+html.light-mode .hr-btn.ghost,
+html.light-mode .hr-back-btn,
+html.light-mode .hbk-back-btn,
+html.light-mode .bk-back-btn,
+html.light-mode .vd-back-btn,
+html.light-mode .adm-back-btn,
+html.light-mode .mr-back-btn,
+html.light-mode .ep-back-btn {
+  background: transparent !important;
+
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+
+  color: #111111 !important;
+}
+
+html.light-mode .hr-btn.ghost:hover {
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ─────────────────────────────────────────────
+   STATUS BADGES
+───────────────────────────────────────────── */
+
+html.light-mode .hr-status.pending,
+html.light-mode .dash-status.pending {
+  color: #8a6d3b !important;
+
+  background: rgba(138, 109, 59, 0.08) !important;
+
+  border-color: rgba(138, 109, 59, 0.18) !important;
+}
+
+html.light-mode .hr-status.confirmed,
+html.light-mode .dash-status.accepted,
+html.light-mode .dash-status.confirmed {
+  color: #1f5132 !important;
+
+  background: rgba(31, 81, 50, 0.08) !important;
+
+  border-color: rgba(31, 81, 50, 0.18) !important;
+}
+
+html.light-mode .hr-status.cancelled,
+html.light-mode .dash-status.rejected,
+html.light-mode .dash-status.cancelled {
+  color: #842029 !important;
+
+  background: rgba(132, 32, 41, 0.08) !important;
+
+  border-color: rgba(132, 32, 41, 0.18) !important;
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────────── */
+
+html.light-mode h1,
+html.light-mode h2,
+html.light-mode h3,
+html.light-mode h4,
+html.light-mode h5,
+html.light-mode h6 {
+  color: #000000 !important;
+
+  font-weight: 500 !important;
+
+  letter-spacing: -0.02em;
+}
+
+html.light-mode p,
+html.light-mode span,
+html.light-mode label,
+html.light-mode div {
+  color: black;
+}
+
+/* secondary text */
+
+html.light-mode .hr-td-sub,
+html.light-mode .hbk-room-desc,
+html.light-mode .hbk-room-meta,
+html.light-mode .hbk-summary-row-label,
+html.light-mode .hbk-total-row-label,
+html.light-mode .hbk-subtitle,
+html.light-mode .rx-sub,
+html.light-mode .lx-sub,
+html.light-mode .hr-page-info {
+  color: var(--text-soft) !important;
+}
+
+/* muted */
+
+html.light-mode .hr-empty,
+html.light-mode .hr-loading-text {
+  color: var(--text-muted) !important;
+}
+
+/* ─────────────────────────────────────────────
+   FILTERS / SEARCH
+───────────────────────────────────────────── */
+
+html.light-mode .hr-search,
+html.light-mode .hr-filter-select,
+html.light-mode .hm-cfilter-dropdown {
+  background: #ffffff !important;
+
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+
+  color: #111111 !important;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light-mode .hm-cfilter-chip,
+html.light-mode .hm-loc-chip {
+  background: rgba(0, 0, 0, 0.03) !important;
+
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+
+  color: #111111 !important;
+}
+
+/* ─────────────────────────────────────────────
+   LOGIN / REGISTER
+───────────────────────────────────────────── */
+
+html.light-mode .lx-left,
+html.light-mode .rx-left,
+html.light-mode .fp-left {
+  background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%) !important;
+}
+
+html.light-mode .lx-right,
+html.light-mode .rx-right,
+html.light-mode .fp-right,
+html.light-mode .rx-form-panel,
+html.light-mode .lx-form-panel {
+  background: #ffffff !important;
+
+  color: #111111 !important;
+}
+
+html.light-mode .rx-input,
+html.light-mode .lx-input {
+  color: #111111 !important;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16) !important;
+
+  background: transparent !important;
+}
+
+html.light-mode .rx-input::placeholder,
+html.light-mode .lx-input::placeholder {
+  color: rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ─────────────────────────────────────────────
+   FOOTERS
+───────────────────────────────────────────── */
+
+html.light-mode footer,
+html.light-mode [class$="-footer"],
+html.light-mode [class*="-footer"] {
+  background: #ffffff !important;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+
+  color: #d3d3d3 !important;
+}
+
+/* ─────────────────────────────────────────────
+   SCROLLBARS
+───────────────────────────────────────────── */
+
+html.light-mode ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html.light-mode ::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb {
+  background: #d3d3d3;
+
+  border-radius: 999px;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0;
+}
+
+/* ─────────────────────────────────────────────
+   IMAGE / LOGO SAFETY
+───────────────────────────────────────────── */
+
+html.light-mode img,
+html.light-mode svg,
+html.light-mode video {
+  opacity: 1 !important;
+}
+
+/* ─────────────────────────────────────────────
+   SELECTION
+───────────────────────────────────────────── */
+
+html.light-mode ::selection {
+  background: rgba(0, 0, 0, 0.12);
+  color: #000000;
+}
+
+/* LOGO */
+
+html.light-mode .hm-logo,
+html.light-mode .hm-logo-text,
+html.light-mode .navbar-logo,
+html.light-mode .logo,
+html.light-mode [class*="logo"] {
+  color: #000000 !important;
+
+  fill: #000000 !important;
+
+  stroke: #000000 !important;
+
+  filter: none !important;
+
+  text-shadow: none !important;
+}
+
+/* remove gradients from logo */
+
+html.light-mode .hm-logo *,
+html.light-mode .navbar-logo *,
+html.light-mode .logo * {
+  color: #000000 !important;
+
+  fill: #000000 !important;
+
+  stroke: #000000 !important;
+
+  background: none !important;
+}
+
+/* ─────────────────────────────────────────────
+   NAVBAR BUTTONS → LUXURY GREY
+───────────────────────────────────────────── */
+
+html.light-mode .hm-topbar button,
+html.light-mode .dash-topbar button,
+html.light-mode .adm-topbar button,
+html.light-mode .hr-topbar button,
+html.light-mode .bk-topbar button,
+html.light-mode .hbk-topbar button,
+html.light-mode .vd-topbar button,
+html.light-mode .mr-topbar button,
+html.light-mode .ep-topbar button,
+html.light-mode .pp-topbar button,
+html.light-mode .ts-topbar button,
+html.light-mode .hm-topbar .btn,
+html.light-mode .dash-topbar .btn,
+html.light-mode .adm-topbar .btn,
+html.light-mode .hr-topbar .btn,
+html.light-mode .bk-topbar .btn,
+html.light-mode .hbk-topbar .btn,
+html.light-mode .vd-topbar .btn,
+html.light-mode .mr-topbar .btn,
+html.light-mode .ep-topbar .btn,
+html.light-mode .pp-topbar .btn,
+html.light-mode .ts-topbar .btn {
+  background: #d3d3d3 !important;
+
+  color: #ffffff !important;
+
+  border: 1px solid #d3d3d3 !important;
+
+  box-shadow: none !important;
+
+  transition: all 1s ease;
+}
+
+/* hover */
+
+html.light-mode .hm-topbar button:hover,
+html.light-mode .dash-topbar button:hover,
+html.light-mode .adm-topbar button:hover,
+html.light-mode .hr-topbar button:hover,
+html.light-mode .bk-topbar button:hover,
+html.light-mode .hbk-topbar button:hover,
+html.light-mode .vd-topbar button:hover,
+html.light-mode .mr-topbar button:hover,
+html.light-mode .ep-topbar button:hover,
+html.light-mode .pp-topbar button:hover,
+html.light-mode .ts-topbar button:hover,
+html.light-mode .hm-topbar .btn:hover,
+html.light-mode .dash-topbar .btn:hover,
+html.light-mode .adm-topbar .btn:hover,
+html.light-mode .hr-topbar .btn:hover,
+html.light-mode .bk-topbar .btn:hover,
+html.light-mode .hbk-topbar .btn:hover,
+html.light-mode .vd-topbar .btn:hover,
+html.light-mode .mr-topbar .btn:hover,
+html.light-mode .ep-topbar .btn:hover,
+html.light-mode .pp-topbar .btn:hover,
+html.light-mode .ts-topbar .btn:hover {
+  background: #111111 !important;
+
+  border-color: #111111 !important;
+
+  color: #ffffff !important;
+
+  transform: translateY(-1px);
+}
+
+/* active */
+
+html.light-mode .hm-topbar button:active,
+html.light-mode .hm-topbar .btn:active {
+  transform: scale(0.98);
+}
+
+/* ─────────────────────────────────────────────
+   REMOVE BORDER IMAGES
+───────────────────────────────────────────── */
+
+html.light-mode * {
+  border-image: none !important;
+}
+
+/* remove weird colored glows */
+
+html.light-mode * {
+  text-shadow: none !important;
+}
+
+/* ─────────────────────────────────────────────
+   FORCE NAV LINKS BLACK
+───────────────────────────────────────────── */
+
+html.light-mode .hm-nav-link,
+html.light-mode .hm-nav-link:visited,
+html.light-mode .hm-nav-link:active,
+html.light-mode .hm-nav-link:hover,
+html.light-mode [class*="-nav-link"],
+html.light-mode [class*="-nav-link"]:visited,
+html.light-mode [class*="-nav-link"]:active,
+html.light-mode [class*="-nav-link"]:hover {
+  color: #000000 !important;
+}
+
+/* ─────────────────────────────────────────────
+   ICONS
+───────────────────────────────────────────── */
+
+html.light-mode i,
+html.light-mode svg,
+html.light-mode svg path {
+  fill: currentColor !important;
+}
+
+/* ─────────────────────────────────────────────
+   MONOCHROME BADGES
+───────────────────────────────────────────── */
+
+html.light-mode .hr-admin-badge,
+html.light-mode .hbk-deposit-badge,
+html.light-mode .hm-cfilter-chip,
+html.light-mode .hm-loc-chip {
+  background: rgba(0, 0, 0, 0.04) !important;
+
+  color: #000000 !important;
+
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ══════════════════════════════════════════════
+   APP BASE
+══════════════════════════════════════════════ */
+
+html.light-mode .app {
+  color: var(--text);
+}
+
+html.light-mode {
+  --bg: #fff;
+  --text: #111;
+}
+
+html.light-mode body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* gold logo / legend — preserved for luxury */
+
+html.light-mode .hm-logo-mark,
+html.light-mode .hm-logo span,
+html.light-mode .legend,
+html.light-mode [class*="gold"],
+html.light-mode [class*="accent"] {
+  color: var(--gold) !important;
+  fill: var(--gold) !important;
+  stroke: var(--gold) !important;
+  border-color: var(--gold-border) !important;
+}
+
+/* ══════════════════════════════════════════════
+   HERO STATS BACKGROUND → #D3D3D3
+══════════════════════════════════════════════ */
+
+html.light-mode .hm-hero-right,
+html.light-mode .hm-hero-stat,
+html.light-mode .hm-hero-stats {
+  background: #d3d3d3 !important;
+  border: none !important;
+}
+
+/* individual stat boxes */
+
+html.light-mode .hm-hero-stat {
+  padding: 2rem !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* remove last border */
+
+html.light-mode .hm-hero-stat:last-child {
+  border-right: none !important;
+}
+
+/* numbers */
+
+html.light-mode .hm-stat-n {
+  color: #000000 !important;
+  font-weight: 500 !important;
+}
+
+/* labels */
+
+html.light-mode .hm-stat-l {
+  color: rgba(0, 0, 0, 0.7) !important;
+  letter-spacing: 0.12em;
+}

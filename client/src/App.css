@@ -1,0 +1,1054 @@
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+body > .skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+/* ══════════════════════════════════════════════
+   LUXURY LIGHT MODE
+══════════════════════════════════════════════ */
+
+html.light-mode {
+  --black: #e8e0cc;
+  --obsidian: #ddd4bc;
+  --navy: #d4c9ae;
+  --navy-mid: #c8bba0;
+  --gold: #8a6d1a;
+  --gold-light: #b08a2e;
+  --gold-dim: rgba(138, 109, 26, 0.12);
+  --gold-glow: rgba(138, 109, 26, 0.2);
+  --gold-line: rgba(138, 109, 26, 0.32);
+  --cream: #0a0702;
+  --muted: rgba(10, 7, 2, 0.7);
+  --border: rgba(138, 109, 26, 0.28);
+}
+
+/* ── Global page background for ALL pages ── */
+html.light-mode body {
+  background-color: #ede5d0 !important;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 48px,
+      rgba(168, 135, 42, 0.045) 48px,
+      rgba(168, 135, 42, 0.045) 49px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 48px,
+      rgba(168, 135, 42, 0.03) 48px,
+      rgba(168, 135, 42, 0.03) 49px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 28px,
+      rgba(168, 135, 42, 0.018) 28px,
+      rgba(168, 135, 42, 0.018) 29px
+    ),
+    radial-gradient(
+      ellipse at 15% 0%,
+      rgba(201, 168, 76, 0.12) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 85% 100%,
+      rgba(200, 186, 154, 0.2) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(168, 135, 42, 0.04) 0%,
+      transparent 70%
+    ) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Force-override any hardcoded dark backgrounds site-wide ── */
+html.light-mode *:not(img):not(video):not(canvas):not(svg):not(iframe) {
+  background-color: revert;
+}
+
+/* Re-apply parchment to all root/page containers so nothing slips through */
+html.light-mode [class$="-root"],
+html.light-mode [class*="-root "],
+html.light-mode [class$="-page"],
+html.light-mode [class$="-wrap"],
+html.light-mode [class$="-container"] {
+  background-color: transparent !important;
+  color: #0a0702 !important;
+}
+
+/* ── Topbars / navbars across all pages ── */
+html.light-mode [class$="-topbar"],
+html.light-mode [class$="-navbar"],
+html.light-mode [class*="topbar"],
+html.light-mode [class*="navbar"] {
+  background: rgba(237, 229, 208, 0.97) !important;
+  border-bottom-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Cards across all pages ── */
+html.light-mode [class$="-card"],
+html.light-mode [class*="-card "] {
+  background: rgba(228, 217, 192, 0.45) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Modals across all pages ── */
+html.light-mode [class$="-modal"],
+html.light-mode [class*="-modal "] {
+  background: #ede5d0 !important;
+  color: #0a0702 !important;
+}
+html.light-mode [class$="-modal-overlay"],
+html.light-mode [class*="modal-overlay"] {
+  background: rgba(44, 32, 14, 0.55) !important;
+}
+
+/* ── Inputs / selects / textareas across all pages ── */
+html.light-mode
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html.light-mode select,
+html.light-mode textarea {
+  background: rgba(255, 252, 244, 0.8) !important;
+  border-color: rgba(168, 135, 42, 0.25) !important;
+  color: #0a0702 !important;
+}
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+  color: rgba(10, 7, 2, 0.38) !important;
+}
+html.light-mode select option {
+  background: #ede5d0 !important;
+  color: #0a0702 !important;
+}
+
+/* ── Tables across all pages ── */
+html.light-mode table {
+  color: #0a0702 !important;
+}
+html.light-mode th {
+  background: rgba(228, 217, 192, 0.7) !important;
+  color: #7a600f !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+}
+html.light-mode td {
+  border-color: rgba(168, 135, 42, 0.14) !important;
+  color: #0a0702 !important;
+}
+html.light-mode tr:hover td {
+  background: rgba(168, 135, 42, 0.06) !important;
+}
+html.light-mode tr:nth-child(even) td {
+  background: rgba(228, 217, 192, 0.25) !important;
+}
+
+/* ── Buttons across all pages ── */
+html.light-mode button {
+  color: #7a600f !important;
+  border-color: rgba(168, 135, 42, 0.28) !important;
+}
+html.light-mode button:hover {
+  background: rgba(168, 135, 42, 0.1) !important;
+}
+
+/* ── Sidebar / dashboard panels ── */
+html.light-mode [class*="sidebar"],
+html.light-mode [class*="panel"],
+html.light-mode [class*="drawer"] {
+  background: #ede5d0 !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Stat / metric boxes ── */
+html.light-mode [class*="stat"],
+html.light-mode [class*="metric"],
+html.light-mode [class*="summary"] {
+  background: rgba(228, 217, 192, 0.55) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Footers across all pages ── */
+html.light-mode footer,
+html.light-mode [class$="-footer"],
+html.light-mode [class*="-footer"] {
+  background: rgba(228, 217, 192, 0.75) !important;
+  border-top-color: rgba(168, 135, 42, 0.22) !important;
+  color: rgba(10, 7, 2, 0.6) !important;
+}
+
+/* ── Badges / pills / ribbons ── */
+html.light-mode [class*="ribbon"],
+html.light-mode [class*="badge"],
+html.light-mode [class*="pill"],
+html.light-mode [class*="tag"] {
+  background: rgba(247, 242, 232, 0.9) !important;
+  border-color: rgba(168, 135, 42, 0.28) !important;
+  color: #7a600f !important;
+}
+html.light-mode [class*="ribbon"].available,
+html.light-mode [class*="available"] {
+  color: #2e5a1c !important;
+  border-color: rgba(46, 90, 28, 0.35) !important;
+}
+html.light-mode [class*="ribbon"].unavailable,
+html.light-mode [class*="unavailable"] {
+  color: #7a2222 !important;
+  border-color: rgba(122, 34, 34, 0.35) !important;
+}
+
+/* ── Scrollbars ── */
+html.light-mode ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+html.light-mode ::-webkit-scrollbar-track {
+  background: #ede5d0;
+}
+html.light-mode ::-webkit-scrollbar-thumb {
+  background: rgba(168, 135, 42, 0.35);
+  border-radius: 3px;
+}
+html.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 135, 42, 0.6);
+}
+
+/* ══════════════════════════════════════════════
+   HOME PAGE — specific overrides
+══════════════════════════════════════════════ */
+
+html.light-mode .hm-root {
+  background-color: #ede5d0 !important;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 48px,
+      rgba(168, 135, 42, 0.045) 48px,
+      rgba(168, 135, 42, 0.045) 49px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 48px,
+      rgba(168, 135, 42, 0.03) 48px,
+      rgba(168, 135, 42, 0.03) 49px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 28px,
+      rgba(168, 135, 42, 0.018) 28px,
+      rgba(168, 135, 42, 0.018) 29px
+    ),
+    radial-gradient(
+      ellipse at 15% 0%,
+      rgba(201, 168, 76, 0.12) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 85% 100%,
+      rgba(200, 186, 154, 0.2) 0%,
+      transparent 55%
+    ) !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-root::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    transparent 35%,
+    rgba(228, 217, 192, 0.35) 100%
+  ) !important;
+}
+
+html.light-mode .hm-topbar {
+  background: rgba(237, 229, 208, 0.97) !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-card {
+  background: rgba(228, 217, 192, 0.45) !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-hero-right {
+  background: rgba(228, 217, 192, 0.55) !important;
+}
+
+html.light-mode .hm-skeleton {
+  background: rgba(228, 217, 192, 0.45) !important;
+}
+
+html.light-mode .hm-skeleton-img,
+html.light-mode .hm-skeleton-line {
+  background: linear-gradient(
+    90deg,
+    rgba(168, 135, 42, 0.05) 25%,
+    rgba(168, 135, 42, 0.12) 50%,
+    rgba(168, 135, 42, 0.05) 75%
+  ) !important;
+  background-size: 400% 100% !important;
+}
+
+html.light-mode .hm-modal {
+  background: #ede5d0 !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-field input,
+html.light-mode .hm-field select,
+html.light-mode .hm-field textarea {
+  background: rgba(255, 252, 244, 0.8) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-field select option {
+  background: #ede5d0 !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-field label {
+  color: #7a600f !important;
+}
+
+html.light-mode .hm-footer {
+  background: rgba(228, 217, 192, 0.75) !important;
+  color: rgba(10, 7, 2, 0.6) !important;
+}
+
+html.light-mode .hm-cfilter-dropdown {
+  background: #ede5d0 !important;
+  box-shadow: 0 16px 48px rgba(44, 32, 14, 0.12) !important;
+}
+
+html.light-mode .hm-loc-search {
+  background: rgba(255, 252, 244, 0.7) !important;
+}
+
+html.light-mode .hm-loc-search input {
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-loc-search input::placeholder {
+  color: rgba(10, 7, 2, 0.38) !important;
+}
+
+html.light-mode .hm-card-ribbon.available {
+  color: #2e5a1c !important;
+  border-color: rgba(46, 90, 28, 0.35) !important;
+  background: rgba(247, 242, 232, 0.85) !important;
+}
+
+html.light-mode .hm-card-ribbon.unavailable {
+  color: #7a2222 !important;
+  border-color: rgba(122, 34, 34, 0.35) !important;
+  background: rgba(247, 242, 232, 0.85) !important;
+}
+
+html.light-mode .hm-card-badge {
+  background: rgba(247, 242, 232, 0.9) !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-hotel-star {
+  color: #c9a84c !important;
+  opacity: 0.22 !important;
+}
+
+html.light-mode .hm-hotel-star.lit {
+  opacity: 1 !important;
+}
+
+html.light-mode .hm-hotel-pill {
+  background: rgba(168, 135, 42, 0.07) !important;
+  color: rgba(10, 7, 2, 0.65) !important;
+}
+
+html.light-mode .hm-modal-error {
+  background: rgba(122, 34, 34, 0.06) !important;
+  border-color: rgba(122, 34, 34, 0.25) !important;
+  color: #6a1e1e !important;
+}
+
+html.light-mode .hm-card:hover {
+  box-shadow: 0 12px 48px rgba(168, 135, 42, 0.12) !important;
+}
+
+html.light-mode .hm-section-head {
+  border-bottom-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-card-meta {
+  border-color: rgba(168, 135, 42, 0.22) !important;
+}
+
+html.light-mode .hm-card-meta-item {
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-card-btn {
+  border-color: rgba(168, 135, 42, 0.28) !important;
+  color: #7a600f !important;
+}
+
+html.light-mode .hm-card-btn-toggle {
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: rgba(10, 7, 2, 0.6) !important;
+}
+
+html.light-mode .hm-accom-tabs {
+  border-color: rgba(168, 135, 42, 0.22) !important;
+}
+
+html.light-mode .hm-accom-tab {
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+
+html.light-mode .hm-accom-tab.active {
+  background: rgba(168, 135, 42, 0.1) !important;
+  color: #7a600f !important;
+  border-bottom-color: #7a600f !important;
+}
+
+html.light-mode .hm-nav-sep {
+  background: rgba(168, 135, 42, 0.22) !important;
+}
+
+html.light-mode .hm-modal-header {
+  border-bottom-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-modal-close {
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+
+html.light-mode .hm-modal-close:hover {
+  border-color: rgba(168, 135, 42, 0.45) !important;
+  color: #7a600f !important;
+}
+
+html.light-mode .hm-modal-submit {
+  border-color: rgba(168, 135, 42, 0.35) !important;
+  color: #7a600f !important;
+}
+
+html.light-mode .hm-empty-title {
+  color: #0a0702 !important;
+}
+
+html.light-mode .hm-loc-arrow {
+  background: rgba(228, 217, 192, 0.6) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #7a600f !important;
+}
+
+html.light-mode .hm-loc-arrow:hover:not(:disabled) {
+  background: rgba(168, 135, 42, 0.12) !important;
+  border-color: rgba(168, 135, 42, 0.45) !important;
+}
+
+html.light-mode .hm-cfilter-chip,
+html.light-mode .hm-loc-chip {
+  background: rgba(168, 135, 42, 0.1) !important;
+  border-color: rgba(168, 135, 42, 0.4) !important;
+  color: #7a600f !important;
+}
+
+html.light-mode .hm-cfilter-opt {
+  color: rgba(10, 7, 2, 0.6) !important;
+  border-color: rgba(168, 135, 42, 0.18) !important;
+}
+
+html.light-mode .hm-cfilter-opt:hover,
+html.light-mode .hm-cfilter-opt.active {
+  background: rgba(168, 135, 42, 0.1) !important;
+  border-color: rgba(168, 135, 42, 0.4) !important;
+  color: #7a600f !important;
+}
+
+html.light-mode .hm-cfilter-view-btn {
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+
+html.light-mode .hm-cfilter-view-btn:hover {
+  border-color: rgba(168, 135, 42, 0.4) !important;
+  color: #7a600f !important;
+}
+
+html.light-mode .hm-nav-btn-admin {
+  background: rgba(168, 135, 42, 0.1) !important;
+  border-color: rgba(168, 135, 42, 0.4) !important;
+  color: #7a600f !important;
+}
+
+/* ══════════════════════════════════════════════
+   LIGHT MODE — FORCE OVERRIDES FOR ALL PAGES
+══════════════════════════════════════════════ */
+
+/* ── Page roots ── */
+html.light-mode .hm-root,
+html.light-mode .ab-root,
+html.light-mode .sv-root,
+html.light-mode .pp-root,
+html.light-mode .ts-root,
+html.light-mode .dash-root,
+html.light-mode .adm-root,
+html.light-mode .hr-root,
+html.light-mode .bk-root,
+html.light-mode .hbk-root,
+html.light-mode .vd-root,
+html.light-mode .mr-root,
+html.light-mode .ep-root,
+html.light-mode .fp-root,
+html.light-mode .lx-root,
+html.light-mode .rx-root {
+  background-color: #ede5d0 !important;
+  color: #0a0702 !important;
+}
+
+/* ── Pseudo-element dark vignette — remove in light mode ── */
+html.light-mode .hm-root::before,
+html.light-mode .ab-root::before,
+html.light-mode .sv-root::before,
+html.light-mode .dash-root::before,
+html.light-mode .adm-root::before,
+html.light-mode .hr-root::before,
+html.light-mode .bk-root::before,
+html.light-mode .hbk-root::before,
+html.light-mode .vd-root::before,
+html.light-mode .mr-root::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    transparent 35%,
+    rgba(228, 217, 192, 0.3) 100%
+  ) !important;
+}
+
+/* ── Topbars ── */
+html.light-mode .dash-topbar,
+html.light-mode .adm-topbar,
+html.light-mode .hr-topbar,
+html.light-mode .bk-topbar,
+html.light-mode .hbk-topbar,
+html.light-mode .vd-topbar,
+html.light-mode .mr-topbar,
+html.light-mode .ep-topbar,
+html.light-mode .pp-topbar,
+html.light-mode .ts-topbar {
+  background: rgba(237, 229, 208, 0.97) !important;
+  border-bottom-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Main content areas ── */
+html.light-mode .dash-main,
+html.light-mode .adm-main,
+html.light-mode .bk-main,
+html.light-mode .vd-main,
+html.light-mode .mr-main,
+html.light-mode .ep-main {
+  color: #0a0702 !important;
+  background-color: transparent !important;
+}
+
+/* ── All dark panel / card backgrounds ── */
+html.light-mode .dash-stat,
+html.light-mode .dash-nav-card,
+html.light-mode .dash-submit-card,
+html.light-mode .dash-listing-card,
+html.light-mode .dash-recent-wrap,
+html.light-mode .adm-card,
+html.light-mode .adm-table-wrap,
+html.light-mode .bk-panel,
+html.light-mode .bk-summary-box,
+html.light-mode .bk-total-box,
+html.light-mode .vd-panel,
+html.light-mode .vd-stats,
+html.light-mode .vd-services-summary,
+html.light-mode .vd-booking-fields,
+html.light-mode .vd-admin-svc-card,
+html.light-mode .vd-new-svc-form,
+html.light-mode .mr-card,
+html.light-mode .ep-card,
+html.light-mode .hr-card,
+html.light-mode .hr-table-wrap,
+html.light-mode .prov-modal,
+html.light-mode .prov-tier-card,
+html.light-mode .dash-confirm-box {
+  background: rgba(200, 188, 165, 0.6) !important;
+  border-color: rgba(138, 109, 26, 0.25) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Obsidian / very dark modal backgrounds ── */
+html.light-mode .bk-success-box,
+html.light-mode .vd-confirm-box,
+html.light-mode .dash-confirm-box,
+html.light-mode .hm-modal {
+  background: #ede5d0 !important;
+  border-color: rgba(168, 135, 42, 0.35) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Overlay backdrops ── */
+html.light-mode .prov-overlay,
+html.light-mode .bk-success-overlay,
+html.light-mode .vd-confirm-overlay,
+html.light-mode .dash-confirm-overlay,
+html.light-mode .hm-modal-overlay {
+  background: rgba(44, 32, 14, 0.55) !important;
+}
+
+/* ── Text colors ── */
+html.light-mode .dash-title,
+html.light-mode .dash-stat-val,
+html.light-mode .dash-nav-card-title,
+html.light-mode .dash-listing-card-name,
+html.light-mode .dash-rt-name,
+html.light-mode .dash-confirm-title,
+html.light-mode .prov-modal-title,
+html.light-mode .bk-title,
+html.light-mode .bk-success-title,
+html.light-mode .bk-grand-val,
+html.light-mode .bk-summary-row-val,
+html.light-mode .bk-total-row-val,
+html.light-mode .vd-name,
+html.light-mode .vd-stat-value,
+html.light-mode .vd-admin-svc-name,
+html.light-mode .mr-booking-name,
+html.light-mode .ep-title,
+html.light-mode .hr-title,
+html.light-mode .adm-title {
+  color: #0a0702 !important;
+}
+
+html.light-mode .dash-subtitle,
+html.light-mode .dash-stat-sub,
+html.light-mode .dash-nav-card-desc,
+html.light-mode .dash-listing-card-meta,
+html.light-mode .dash-rt-sub,
+html.light-mode .dash-confirm-sub,
+html.light-mode .prov-modal-sub,
+html.light-mode .bk-subtitle,
+html.light-mode .bk-submit-note,
+html.light-mode .bk-success-sub,
+html.light-mode .bk-summary-row-label,
+html.light-mode .bk-total-row-label,
+html.light-mode .vd-location,
+html.light-mode .vd-desc,
+html.light-mode .vd-stat-label,
+html.light-mode .vd-admin-svc-meta,
+html.light-mode .mr-meta,
+html.light-mode .ep-sub,
+html.light-mode .hr-sub,
+html.light-mode .adm-sub {
+  color: rgba(10, 7, 2, 0.65) !important;
+}
+
+/* ── Table cells ── */
+html.light-mode .dash-recent-table td,
+html.light-mode .adm-table td,
+html.light-mode .hr-table td {
+  color: #0a0702 !important;
+  border-color: rgba(168, 135, 42, 0.1) !important;
+}
+
+html.light-mode .dash-recent-table th,
+html.light-mode .adm-table th,
+html.light-mode .hr-table th {
+  background: rgba(228, 217, 192, 0.7) !important;
+  color: #7a600f !important;
+  border-color: rgba(168, 135, 42, 0.18) !important;
+}
+
+/* ── Inputs / selects / textareas (all pages) ── */
+html.light-mode .prov-input,
+html.light-mode .prov-select,
+html.light-mode .prov-textarea,
+html.light-mode .bk-input,
+html.light-mode .bk-select,
+html.light-mode .vd-booking-input,
+html.light-mode .vd-edit-input,
+html.light-mode .vd-edit-select,
+html.light-mode .ep-input,
+html.light-mode .ep-select,
+html.light-mode .adm-input,
+html.light-mode .adm-select,
+html.light-mode .hr-input,
+html.light-mode .hr-select,
+html.light-mode .prov-event-search,
+html.light-mode .prov-event-mult-input,
+html.light-mode .prov-tier-input {
+  background: rgba(255, 252, 244, 0.9) !important;
+  border-color: rgba(168, 135, 42, 0.28) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Buttons ── */
+html.light-mode .dash-btn-edit,
+html.light-mode .dash-btn-delete,
+html.light-mode .dash-tab-btn,
+html.light-mode .dash-history-filter-btn,
+html.light-mode .dash-filter-btn,
+html.light-mode .dash-logout-btn,
+html.light-mode .prov-btn-cancel,
+html.light-mode .prov-add-url,
+html.light-mode .prov-preset-btn,
+html.light-mode .prov-event-action-btn,
+html.light-mode .bk-back-btn,
+html.light-mode .vd-back-btn,
+html.light-mode .vd-type-arrow,
+html.light-mode .vd-item-arrow,
+html.light-mode .vd-hours-btn,
+html.light-mode .vd-icon-btn,
+html.light-mode .vd-svc-inline-btn,
+html.light-mode .vd-svc-add-btn,
+html.light-mode .adm-back-btn,
+html.light-mode .hr-back-btn,
+html.light-mode .mr-back-btn,
+html.light-mode .ep-back-btn {
+  background: transparent !important;
+  border-color: rgba(168, 135, 42, 0.3) !important;
+  color: #7a600f !important;
+}
+
+html.light-mode .dash-tab-btn.active,
+html.light-mode .dash-history-filter-btn.active,
+html.light-mode .dash-filter-btn.active {
+  background: rgba(168, 135, 42, 0.12) !important;
+  border-color: rgba(168, 135, 42, 0.45) !important;
+  color: #7a600f !important;
+}
+
+/* ── Status badges ── */
+html.light-mode .dash-status.pending {
+  color: #7a4e00 !important;
+  background: rgba(168, 135, 42, 0.12) !important;
+  border-color: rgba(168, 135, 42, 0.35) !important;
+}
+html.light-mode .dash-status.accepted,
+html.light-mode .dash-status.confirmed {
+  color: #264d17 !important;
+  background: rgba(46, 90, 28, 0.1) !important;
+  border-color: rgba(46, 90, 28, 0.3) !important;
+}
+html.light-mode .dash-status.rejected,
+html.light-mode .dash-status.cancelled {
+  color: #6a1e1e !important;
+  background: rgba(122, 34, 34, 0.08) !important;
+  border-color: rgba(122, 34, 34, 0.25) !important;
+}
+
+/* ── Listing card badges ── */
+html.light-mode .dash-listing-card-badge {
+  color: #264d17 !important;
+  background: rgba(46, 90, 28, 0.1) !important;
+  border-color: rgba(46, 90, 28, 0.3) !important;
+}
+
+/* ── Event type items in venue form ── */
+html.light-mode .prov-event-item {
+  background: rgba(255, 252, 244, 0.6) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+}
+html.light-mode .prov-event-item.selected {
+  background: rgba(168, 135, 42, 0.12) !important;
+  border-color: rgba(168, 135, 42, 0.45) !important;
+}
+html.light-mode .prov-event-name {
+  color: #0a0702 !important;
+}
+
+/* ── Tier cards ── */
+html.light-mode .prov-tier-card {
+  background: rgba(228, 217, 192, 0.4) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+}
+
+/* ── Booking page summary ── */
+html.light-mode .bk-mult-badge {
+  background: rgba(168, 135, 42, 0.1) !important;
+  border-color: rgba(168, 135, 42, 0.35) !important;
+  color: #7a600f !important;
+}
+html.light-mode .bk-mult-badge.neutral {
+  background: transparent !important;
+  border-color: rgba(168, 135, 42, 0.2) !important;
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+html.light-mode .bk-tier-pill {
+  border-color: rgba(168, 135, 42, 0.2) !important;
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+html.light-mode .bk-tier-pill.active {
+  border-color: rgba(168, 135, 42, 0.45) !important;
+  color: #7a600f !important;
+  background: rgba(168, 135, 42, 0.1) !important;
+}
+
+/* ── Payment method cards ── */
+html.light-mode .bk-method-card {
+  background: rgba(228, 217, 192, 0.4) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+}
+html.light-mode .bk-method-card.selected {
+  background: rgba(168, 135, 42, 0.12) !important;
+  border-color: rgba(168, 135, 42, 0.5) !important;
+}
+html.light-mode .bk-method-label {
+  color: #0a0702 !important;
+}
+html.light-mode .bk-method-sub {
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+
+/* ── Deposit badges ── */
+html.light-mode .bk-deposit-badge {
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+html.light-mode .bk-deposit-badge.active {
+  border-color: rgba(168, 135, 42, 0.5) !important;
+  color: #7a600f !important;
+  background: rgba(168, 135, 42, 0.1) !important;
+}
+
+/* ── VenueDetails sidebar ── */
+html.light-mode .vd-stat {
+  border-color: rgba(168, 135, 42, 0.18) !important;
+}
+html.light-mode .vd-services-summary-item {
+  border-color: rgba(168, 135, 42, 0.1) !important;
+}
+html.light-mode .vd-services-total {
+  background: rgba(168, 135, 42, 0.08) !important;
+}
+html.light-mode .vd-summary-item-name {
+  color: #0a0702 !important;
+}
+html.light-mode .vd-email-tag {
+  background: rgba(168, 135, 42, 0.08) !important;
+  border-color: rgba(168, 135, 42, 0.2) !important;
+}
+html.light-mode .vd-email-tag-text {
+  color: #0a0702 !important;
+}
+
+/* ── Admin dashboard nav cards ── */
+html.light-mode .dash-nav-card-count {
+  color: #7a600f !important;
+}
+html.light-mode .dash-nav-card-count-label {
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+html.light-mode .dash-nav-card-cta {
+  border-color: rgba(168, 135, 42, 0.35) !important;
+  color: #7a600f !important;
+}
+
+/* ── Error toast ── */
+html.light-mode .dash-error-toast {
+  background: rgba(122, 34, 34, 0.08) !important;
+  border-color: rgba(122, 34, 34, 0.3) !important;
+  color: #6a1e1e !important;
+}
+
+/* ── Loading spinner text ── */
+html.light-mode .dash-loading-text,
+html.light-mode .dash-empty {
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+
+/* ── Dividers ── */
+html.light-mode .bk-divider {
+  background: rgba(168, 135, 42, 0.2) !important;
+}
+html.light-mode .vd-divider {
+  background: rgba(168, 135, 42, 0.2) !important;
+}
+
+/* ── Footer ── */
+html.light-mode .dash-footer,
+html.light-mode .bk-footer,
+html.light-mode .vd-footer,
+html.light-mode .mr-footer,
+html.light-mode .ep-footer,
+html.light-mode .hr-footer,
+html.light-mode .adm-footer {
+  background: rgba(228, 217, 192, 0.75) !important;
+  border-top-color: rgba(168, 135, 42, 0.22) !important;
+}
+html.light-mode .dash-footer-copy,
+html.light-mode .bk-footer-copy,
+html.light-mode .vd-footer-copy,
+html.light-mode .mr-footer-copy,
+html.light-mode .adm-footer-copy {
+  color: rgba(10, 7, 2, 0.55) !important;
+}
+
+/* ══════════════════════════════════════════════
+   LOGIN / REGISTER / FORGOT PASSWORD
+   — flat warm parchment, no navy fades
+══════════════════════════════════════════════ */
+
+/* Left decorative panels — flat warm tone, no gradient */
+html.light-mode .lx-left,
+html.light-mode .rx-left,
+html.light-mode .fp-left {
+  background: #d4c9ae !important;
+}
+
+/* Remove all pseudo-element gradient overlays on left panels */
+html.light-mode .lx-left::before,
+html.light-mode .rx-left::before,
+html.light-mode .fp-left::before,
+html.light-mode .lx-left::after,
+html.light-mode .rx-left::after,
+html.light-mode .fp-left::after {
+  background: none !important;
+  display: none !important;
+}
+
+/* Right visual panel — remove navy gradient and diagonal pattern */
+html.light-mode .rx-right,
+html.light-mode .lx-right {
+  background: #e8dfc8 !important;
+}
+html.light-mode .rx-right::before,
+html.light-mode .lx-right::before,
+html.light-mode .rx-right::after,
+html.light-mode .lx-right::after {
+  background: none !important;
+  background-image: none !important;
+  display: none !important;
+}
+
+/* Adjust text/decoration colours on the now-light right panel */
+html.light-mode .rx-right-headline,
+html.light-mode .rx-right-logo-text,
+html.light-mode .rx-feat-title {
+  color: #0a0702 !important;
+}
+html.light-mode .rx-right-eyebrow,
+html.light-mode .rx-palette-label {
+  color: #7a600f !important;
+  opacity: 1 !important;
+}
+html.light-mode .rx-feat-desc {
+  color: rgba(10, 7, 2, 0.62) !important;
+}
+html.light-mode .rx-feat {
+  border-bottom-color: rgba(168, 135, 42, 0.15) !important;
+}
+html.light-mode .rx-palette {
+  border-top-color: rgba(168, 135, 42, 0.22) !important;
+}
+html.light-mode .rx-frame {
+  border-color: rgba(168, 135, 42, 0.2) !important;
+}
+
+/* Right form panels */
+html.light-mode .lx-right,
+html.light-mode .rx-right,
+html.light-mode .fp-right,
+html.light-mode .rx-form-panel,
+html.light-mode .lx-form-panel {
+  background: #ede5d0 !important;
+  color: #0a0702 !important;
+}
+html.light-mode .rx-form-panel {
+  border-right-color: rgba(138, 109, 26, 0.18) !important;
+}
+
+/* Input underlines */
+html.light-mode .rx-input,
+html.light-mode .lx-input {
+  color: #0a0702 !important;
+  border-bottom-color: rgba(138, 109, 26, 0.3) !important;
+  background: transparent !important;
+}
+html.light-mode .rx-input::placeholder,
+html.light-mode .lx-input::placeholder {
+  color: rgba(10, 7, 2, 0.35) !important;
+}
+html.light-mode .rx-phone-row {
+  border-bottom-color: rgba(138, 109, 26, 0.3) !important;
+}
+html.light-mode .rx-country-btn {
+  color: #0a0702 !important;
+  border-right-color: rgba(138, 109, 26, 0.2) !important;
+}
+html.light-mode .rx-title,
+html.light-mode .lx-title {
+  color: #0a0702 !important;
+}
+html.light-mode .rx-sub,
+html.light-mode .lx-sub {
+  color: rgba(10, 7, 2, 0.62) !important;
+}
+
+/* ── My Reservations cards ── */
+html.light-mode .mr-reservation-card,
+html.light-mode .mr-hotel-card {
+  background: rgba(228, 217, 192, 0.45) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Edit Profile ── */
+html.light-mode .ep-panel {
+  background: rgba(228, 217, 192, 0.45) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+/* ── Services page ── */
+html.light-mode .sv-card,
+html.light-mode .sv-panel {
+  background: rgba(228, 217, 192, 0.45) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
+
+/* ── About / Privacy / Terms text ── */
+html.light-mode .ab-root,
+html.light-mode .pp-root,
+html.light-mode .ts-root {
+  color: #0a0702 !important;
+}
+html.light-mode .ab-story-title,
+html.light-mode .ab-section-title,
+html.light-mode .ab-cta-title,
+html.light-mode .ab-team-name,
+html.light-mode .pp-title,
+html.light-mode .ts-title {
+  color: #0a0702 !important;
+}
+html.light-mode .ab-value-card,
+html.light-mode .ab-team-card {
+  background: rgba(228, 217, 192, 0.45) !important;
+  border-color: rgba(168, 135, 42, 0.22) !important;
+  color: #0a0702 !important;
+}
