@@ -8,7 +8,12 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  connectionTimeout: 10000,
+  greetingTimeout: 10000,
+  socketTimeout: 10000,
 });
+console.log("Sending email...");
+
 
 const sendVerificationEmail = async (toEmail, code, type = "verify") => {
   const isReset = type === "reset";
@@ -100,9 +105,12 @@ const sendVerificationEmail = async (toEmail, code, type = "verify") => {
 </body>
 </html>
     `,
+    timeout: 10000,
   });
 
   console.log("Email sent to", toEmail);
 };
+console.log("Email sent");
 
 module.exports = { sendVerificationEmail };
+
