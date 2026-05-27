@@ -31,6 +31,9 @@ app.use(
   }),
 );
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/test-email", async (req, res) => {
   const nodemailer = require("nodemailer");
 
@@ -60,9 +63,6 @@ app.get("/test-email", async (req, res) => {
     res.json({ success: false, error: err.message });
   }
 });
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/api/users", userRoutes);
