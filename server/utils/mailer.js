@@ -1,9 +1,11 @@
-const Brevo = require("@getbrevo/brevo");
+const {
+  TransactionalEmailsApi,
+  SendSmtpEmail,
+  ApiClient,
+} = require("@getbrevo/brevo");
 
-const client = Brevo.ApiClient.instance;
-client.authentications["api-key"].apiKey = process.env.BREVO_API_KEY;
-
-const apiInstance = new Brevo.TransactionalEmailsApi();
+const apiInstance = new TransactionalEmailsApi();
+apiInstance.authentications["api-key"].apiKey = process.env.BREVO_API_KEY;
 
 const sendVerificationEmail = async (toEmail, code, type = "verify") => {
   const isReset = type === "reset";
@@ -15,8 +17,7 @@ const sendVerificationEmail = async (toEmail, code, type = "verify") => {
     ? 'We received a request to reset your password. Use the code below. It expires in <strong style="color:#E2C97E !important">10 minutes</strong>.'
     : 'Thank you for registering. Use the code below to verify your email. It expires in <strong style="color:#E2C97E !important">10 minutes</strong>.';
 
-  const sendSmtpEmail = new Brevo.SendSmtpEmail();
-
+  const sendSmtpEmail = new SendSmtpEmail();
   sendSmtpEmail.subject = subject;
   sendSmtpEmail.to = [{ email: toEmail }];
   sendSmtpEmail.sender = { email: process.env.EMAIL_USER, name: "Eventy" };
