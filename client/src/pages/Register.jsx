@@ -416,9 +416,15 @@ function CountrySelect({ selected, onChange }) {
 /* ─────────────────────────────────────────
    OTP Modal
 ───────────────────────────────────────── */
-function OtpModal({ email, onVerified, onClose, onResend }) {
+function OtpModal({
+  email,
+  onVerified,
+  onClose,
+  onResend,
+  loading,
+  serverError,
+}) {
   const [digits, setDigits] = useState(["", "", "", "", "", ""]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [countdown, setCountdown] = useState(60);
   const refs = useRef([]);
@@ -469,6 +475,7 @@ function OtpModal({ email, onVerified, onClose, onResend }) {
       setError("Please enter the full 6-digit code.");
       return;
     }
+    if (loading) return;
     setError("");
     onVerified(code);
   };
@@ -507,6 +514,12 @@ function OtpModal({ email, onVerified, onClose, onResend }) {
         {error && (
           <div className="rx-error" style={{ marginBottom: 20 }}>
             {error}
+          </div>
+        )}
+
+        {serverError && (
+          <div className="rx-error" style={{ marginBottom: 20 }}>
+            {serverError}
           </div>
         )}
 
@@ -631,7 +644,7 @@ export default function Register() {
       setSuccess("Account created successfully. Redirecting to sign in…");
       setTimeout(() => navigate("/login"), 2000);
     } catch (err) {
-      setShowOtp(false);
+      // removed setShowOtp(false) — modal stays open to show the error
       setError(
         err.response?.data?.message || "Registration failed. Please try again.",
       );
@@ -650,8 +663,13 @@ export default function Register() {
           <OtpModal
             email={form.email}
             onVerified={handleVerified}
-            onClose={() => setShowOtp(false)}
+            onClose={() => {
+              setShowOtp(false);
+              setError("");
+            }}
             onResend={handleResend}
+            loading={loading}
+            serverError={error}
           />
         )}
 

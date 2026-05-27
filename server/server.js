@@ -4,6 +4,8 @@ const path = require("path");
 require("dotenv").config();
 
 const connectDB = require("./config/db");
+
+// Routes
 const userRoutes = require("./routes/userRoutes");
 const venueRoutes = require("./routes/venueRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
@@ -18,17 +20,21 @@ const reviewRoutes = require("./routes/reviewRoutes");
 
 const app = express();
 
+// Connect DB
 connectDB();
 
+// Middleware
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://eventy-website.vercel.app"],
     credentials: true,
   }),
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Routes
 app.use("/api/users", userRoutes);
 app.use("/api/venues", venueRoutes);
 app.use("/api/bookings", bookingRoutes);
@@ -40,12 +46,25 @@ app.use("/api/hotels", hotelRoutes);
 app.use("/api/hotel-bookings", hotelBookingRoutes);
 app.use("/api/provider", providerRoutes);
 app.use("/api/reviews", reviewRoutes);
+
+// Static uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+// Health check route
 app.get("/", (req, res) => {
-  res.send("Eventy Server Running");
+  res.send("Eventy Server Running 🚀");
 });
 
+// Error handler (IMPORTANT for debugging OTP issues)
+app.use((err, req, res, next) => {
+  console.error("Server Error:", err);
+  res.status(500).json({
+    success: false,
+    message: "Internal Server Error",
+  });
+});
+
+// Port
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

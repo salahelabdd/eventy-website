@@ -9,7 +9,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.BREVO_PASS,
   },
 });
-console.log("Sending email...");
 
 const sendVerificationEmail = async (toEmail, code, type = "verify") => {
   const isReset = type === "reset";
@@ -106,6 +105,5 @@ const sendVerificationEmail = async (toEmail, code, type = "verify") => {
 
   console.log("Email sent to", toEmail);
 };
-console.log("Email sent");
 
 module.exports = { sendVerificationEmail };

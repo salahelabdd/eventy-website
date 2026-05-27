@@ -16,27 +16,29 @@ const sendOtp = async (req, res) => {
       return res.status(400).json({ message: "Email is required." });
     }
 
-    // Block if email is already registered
     const existing = await User.findOne({ email });
     if (existing) {
-      return res
-        .status(400)
-        .json({ message: "An account with this email already exists." });
+      return res.status(400).json({
+        message: "An account with this email already exists.",
+      });
     }
 
     const code = generateOtp();
     saveOtp(`verify_${email}`, code);
-    await sendVerificationEmail(email, code, "verify");
 
-    res.json({ message: "Verification code sent." });
+    // ⚡ IMPORTANT: do NOT block response on email sending
+    sendVerificationEmail(email, code, "verify")
+      .then(() => console.log("OTP email sent"))
+      .catch((err) => console.error("Email error:", err));
+
+    return res.json({ message: "Verification code sent." });
   } catch (err) {
     console.error("Send OTP error:", err);
-    res.status(500).json({
+    return res.status(500).json({
       message: "Failed to send verification email. Please try again.",
     });
   }
 };
-
 // ─────────────────────────────────────────
 // Step 2: Verify OTP then create the user
 // POST /api/users/verify-and-register
@@ -150,7 +152,10 @@ const forgotPassword = async (req, res) => {
 
     const code = generateOtp();
     saveOtp(`reset_${email}`, code);
-    await sendVerificationEmail(email, code, "reset");
+
+    sendVerificationEmail(email, code, "reset")
+      .then(() => console.log("Reset email sent to", email))
+      .catch((err) => console.error("Reset email error:", err));
 
     res.json({ message: "If this email exists, a reset code has been sent." });
   } catch (err) {
@@ -171,6 +176,19 @@ const resetPassword = async (req, res) => {
     const result = verifyOtp(`reset_${email}`, code);
     if (!result.valid) {
       return res.status(400).json({ message: result.reason });
+    }
+
+    if (!newPassword || newPassword.length < 8) {
+      return res
+        .status(400)
+        .json({ message: "Password must be at least 8 characters long." });
+    }
+    if (!/[A-Z]/.test(newPassword)) {
+      return res
+        .status(400)
+        .json({
+          message: "Password must contain at least one uppercase letter.",
+        });
     }
 
     const hashedPassword = await bcrypt.hash(newPassword, 12);
