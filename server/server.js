@@ -31,6 +31,36 @@ app.use(
   }),
 );
 
+app.get("/test-email", async (req, res) => {
+  const nodemailer = require("nodemailer");
+
+  console.log("BREVO_USER:", process.env.BREVO_USER);
+  console.log("BREVO_PASS:", process.env.BREVO_PASS ? "exists" : "MISSING");
+  console.log("EMAIL_USER:", process.env.EMAIL_USER);
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp-relay.brevo.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.BREVO_USER,
+      pass: process.env.BREVO_PASS,
+    },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: `"Eventy" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      subject: "Brevo Test",
+      text: "If you see this, Brevo is working.",
+    });
+    res.json({ success: true, message: "Email sent!" });
+  } catch (err) {
+    res.json({ success: false, error: err.message });
+  }
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
